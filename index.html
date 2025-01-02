@@ -24,6 +24,7 @@
             background-color: #000;
             color: #fff;
             border-bottom: 3px solid #f7a440;
+            position: relative;
         }
 
         header img {
@@ -33,8 +34,13 @@
 
         header h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 50px;
-            margin: 10px 0;
+            font-size: 40px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            margin: 0;
         }
 
         .content {
@@ -49,6 +55,22 @@
             max-width: 800px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative; /* Para colocar el logo en las imágenes */
+        }
+
+        /* Estilo para el logo en las imágenes de instalaciones */
+        .content .gallery img {
+            position: relative;
+        }
+
+        .content .gallery img::after {
+            content: url('imagenes/Alma&Sabor.png');
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 60px; /* Ajusta el tamaño del logo */
+            height: auto;
+            opacity: 0.8; /* Transparencia para no tapar demasiado la imagen */
         }
 
         .gallery, .teachers {
@@ -77,6 +99,10 @@
             text-align: center;
             padding: 15px;
             border-radius: 15px;
+            background-image: url('imagenes/Alma&Sabor.png'); /* Fondo con el logo */
+            background-size: contain; /* Mantener el logo dentro de la tarjeta */
+            background-repeat: no-repeat;
+            background-position: center center; /* Centrado del logo */
         }
 
         .teacher-card h3 {
@@ -100,8 +126,7 @@
 <body>
     <header>
         <img src="imagenes/Alma&Sabor.png" alt="Logo Alma y Sabor">
-        <h1>Alma y Sabor</h1>
-        <p>Un evento inolvidable de Salsa, Bachata y Kizomba</p>
+        <h1>Alma & Sabor</h1>
     </header>
 
     <div class="content">
@@ -136,15 +161,15 @@
                 <h3>Nico y Eva</h3>
                 <p>Taller de Bachata</p>
             </div>
-                <div class="teacher-card">
+            <div class="teacher-card">
                 <img src="data:image/jpeg;base64,..." alt="Profesor 6">
                 <h3>Angie</h3>
                 <p>Taller de Estilo Femenino</p>
             </div>
-                <div class="teacher-card">
-                    <img src="data:image/jpeg;base64,..." alt="Profesor 7">
-                    <h3>Isa CAmpoy & Andrés Fdez</h3>
-                    <p>Organizadores</p>
+            <div class="teacher-card">
+                <img src="data:image/jpeg;base64,..." alt="Profesor 7">
+                <h3>Isa CAmpoy & Andrés Fdez</h3>
+                <p>Organizadores</p>
             </div>
         </div>
     </div>
