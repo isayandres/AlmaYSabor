@@ -55,7 +55,7 @@
             max-width: 800px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            position: relative; /* Para colocar el logo en las imágenes */
+            position: relative;
         }
 
         /* Estilo para el logo en las imágenes de instalaciones */
@@ -80,29 +80,43 @@
             margin-top: 40px;
         }
 
-        .gallery img, .teacher-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery img:hover, .teacher-card img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-        }
-
+        /* Usar el logo como borde alrededor de las imágenes de los profesores */
         .teacher-card {
             background-color: #fff;
             color: #333;
             text-align: center;
             padding: 15px;
-            border-radius: 15px;
-            background-image: url('imagenes/Alma&Sabor.png'); /* Fondo con el logo */
-            background-size: contain; /* Mantener el logo dentro de la tarjeta */
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 250px; /* Ajusta el tamaño de la tarjeta */
+            height: 250px; /* Asegura que la tarjeta sea un círculo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+        }
+
+        .teacher-card img {
+            width: 80%; /* Tamaño de la imagen del profesor */
+            height: 80%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .teacher-card::before {
+            content: url('imagenes/Alma&Sabor.png');
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: contain;
             background-repeat: no-repeat;
-            background-position: center center; /* Centrado del logo */
+            background-position: center;
+            z-index: -1; /* Coloca el logo detrás de la imagen del profesor */
+            opacity: 0.1; /* Baja opacidad para dar un toque sutil */
         }
 
         .teacher-card h3 {
