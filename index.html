@@ -15,12 +15,12 @@
             margin: 0;
             padding: 0;
             color: #fff;
-            background: linear-gradient(180deg, #f7a440, #e55b13, #4a1c07);
+            background: linear-gradient(180deg, #f7a440, #e55b13, #4a1c07); /* Colores del logo como fondo */
         }
 
         header {
             text-align: center;
-            padding: 20px;
+            padding: 40px;
             background-color: #000;
             color: #fff;
             border-bottom: 3px solid #f7a440;
@@ -28,19 +28,15 @@
         }
 
         header img {
-            width: 150px;
+            width: 300px; /* Aumentar el tamaño del logo */
             height: auto;
+            margin-bottom: 20px; /* Separación entre el logo y el texto */
         }
 
         header h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 40px;
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #fff;
-            margin: 0;
+            font-size: 60px;
+            margin: 10px 0;
         }
 
         .content {
@@ -68,9 +64,9 @@
             position: absolute;
             bottom: 10px;
             right: 10px;
-            width: 60px; /* Ajusta el tamaño del logo */
+            width: 60px;
             height: auto;
-            opacity: 0.8; /* Transparencia para no tapar demasiado la imagen */
+            opacity: 0.8;
         }
 
         .gallery, .teachers {
@@ -80,7 +76,6 @@
             margin-top: 40px;
         }
 
-        /* Usar el logo como borde alrededor de las imágenes de los profesores */
         .teacher-card {
             background-color: #fff;
             color: #333;
@@ -90,8 +85,8 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            width: 250px; /* Ajusta el tamaño de la tarjeta */
-            height: 250px; /* Asegura que la tarjeta sea un círculo */
+            width: 250px;
+            height: 250px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,7 +94,7 @@
         }
 
         .teacher-card img {
-            width: 80%; /* Tamaño de la imagen del profesor */
+            width: 80%;
             height: 80%;
             border-radius: 50%;
             object-fit: cover;
@@ -115,8 +110,8 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            z-index: -1; /* Coloca el logo detrás de la imagen del profesor */
-            opacity: 0.1; /* Baja opacidad para dar un toque sutil */
+            z-index: -1;
+            opacity: 0.1;
         }
 
         .teacher-card h3 {
@@ -140,7 +135,7 @@
 <body>
     <header>
         <img src="imagenes/Alma&Sabor.png" alt="Logo Alma y Sabor">
-        <h1>Alma & Sabor</h1>
+        <h1>Alma y Sabor</h1>
     </header>
 
     <div class="content">
