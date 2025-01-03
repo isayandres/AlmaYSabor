@@ -6,36 +6,33 @@
     <title>Alma y Sabor</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Aplicar la fuente Great Vibes a toda la página */
         body {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             color: #fff;
-            background: linear-gradient(180deg, #f7a440, #e55b13, #4a1c07); /* Colores del logo como fondo */
+            background: linear-gradient(180deg, #000080, #4a1c07, #d62828, #f7a440); /* Azul marino combinado con colores del logo */
         }
 
         header {
             text-align: center;
-            padding: 40px;
+            padding: 20px;
             background-color: #000;
             color: #fff;
             border-bottom: 3px solid #f7a440;
-            position: relative;
         }
 
         header img {
-            width: 300px; /* Aumentar el tamaño del logo */
+            width: 150px;
             height: auto;
-            margin-bottom: 20px; /* Separación entre el logo y el texto */
         }
 
         header h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 60px;
+            font-size: 50px;
             margin: 10px 0;
         }
 
@@ -51,22 +48,6 @@
             max-width: 800px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-
-        /* Estilo para el logo en las imágenes de instalaciones */
-        .content .gallery img {
-            position: relative;
-        }
-
-        .content .gallery img::after {
-            content: url('imagenes/Alma&Sabor.png');
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 60px;
-            height: auto;
-            opacity: 0.8;
         }
 
         .gallery, .teachers {
@@ -76,42 +57,25 @@
             margin-top: 40px;
         }
 
+        .gallery img, .teacher-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover, .teacher-card img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
         .teacher-card {
             background-color: #fff;
             color: #333;
             text-align: center;
             padding: 15px;
-            border-radius: 50%;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            width: 250px;
-            height: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #fff;
-        }
-
-        .teacher-card img {
-            width: 80%;
-            height: 80%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .teacher-card::before {
-            content: url('imagenes/Alma&Sabor.png');
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            z-index: -1;
-            opacity: 0.1;
+            border-radius: 15px;
         }
 
         .teacher-card h3 {
@@ -134,8 +98,9 @@
 </head>
 <body>
     <header>
-        <img src="imagenes/Alma&Sabor.png" alt="Logo Alma y Sabor">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAW0lEQVR4nGNgGAXUBwA7KP+HgQABQTxCAANB/gfhPwAYhMAIMDyfkA0IHJwCBgWJQCUYHJBbRBkKDDwR+H8EA3iDvgcxGg0CBwZHgTUBEE8oABKEagAQAY3EDAjMrRgAAAABJRU5ErkJggg==" alt="Logo Alma y Sabor">
         <h1>Alma y Sabor</h1>
+        <p>Un evento inolvidable de Salsa, Bachata y Kizomba</p>
     </header>
 
     <div class="content">
@@ -152,40 +117,30 @@
         <div class="teachers">
             <div class="teacher-card">
                 <img src="data:image/jpeg;base64,..." alt="Profesor 1">
-                <h3>Miguel Angel</h3>
-                <p>Taller de Salsa en linea</p>
+                <h3>Juan Pérez</h3>
+                <p>Taller de Salsa</p>
             </div>
             <div class="teacher-card">
                 <img src="data:image/jpeg;base64,..." alt="Profesor 2">
-                <h3>Manolo Magañas</h3>
-                <p>Taller de Salsa Casino</p>
-            </div>
-            <div class="teacher-card">
-                <img src="data:image/jpeg;base64,..." alt="Profesor 3">
-                <h3>Jose Vidal</h3>
-                <p>Taller de Salsa en linea</p>
-            </div>
-            <div class="teacher-card">
-                <img src="data:image/jpeg;base64,..." alt="Profesor 5">
-                <h3>Nico y Eva</h3>
+                <h3>María Gómez</h3>
                 <p>Taller de Bachata</p>
             </div>
             <div class="teacher-card">
-                <img src="data:image/jpeg;base64,..." alt="Profesor 6">
-                <h3>Angie</h3>
-                <p>Taller de Estilo Femenino</p>
+                <img src="data:image/jpeg;base64,..." alt="Profesor 3">
+                <h3>Carlos Ruiz</h3>
+                <p>Taller de Kizomba</p>
             </div>
             <div class="teacher-card">
-                <img src="data:image/jpeg;base64,..." alt="Profesor 7">
-                <h3>Isa CAmpoy & Andrés Fdez</h3>
-                <p>Organizadores</p>
+                <img src="data:image/jpeg;base64,..." alt="Profesor 4">
+                <h3>Ana López</h3>
+                <p>Taller de Estilo Femenino</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>Organizado por Isa Campoy & Andrés Fdez</p>
-        <p>Contacto: isayandres@gmail.com | Tel: 635807666</p>
+        <p>Organizado por los mejores profesionales del baile</p>
+        <p>Contacto: info@almaysabor.com | Tel: 123-456-789</p>
     </footer>
 </body>
 </html>
