@@ -24,7 +24,6 @@
             background-color: #000;
             color: #fff;
             border-bottom: 3px solid #f7a440;
-            position: relative;
         }
 
         header img {
@@ -46,30 +45,37 @@
             padding: 20px;
         }
 
-        .content img {
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
             width: 100%;
-            max-width: 800px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            position: relative;
         }
 
-        /* Estilo para el logo en las imágenes de instalaciones */
-        .content .gallery img {
-            position: relative;
-        }
-
-        .content .gallery img::after {
-            content: url('imagenes/Alma&Sabor.png');
+        .gallery-item::after {
+            content: '';
+            background: url('imagenes/Alma&Sabor.png') no-repeat center center;
+            background-size: 60px;
             position: absolute;
             bottom: 10px;
             right: 10px;
             width: 60px;
-            height: auto;
+            height: 60px;
             opacity: 0.8;
         }
 
-        .gallery, .teachers {
+        .teachers {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
@@ -90,7 +96,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #fff;
         }
 
         .teacher-card img {
@@ -101,17 +106,16 @@
         }
 
         .teacher-card::before {
-            content: url('imagenes/Alma&Sabor.png');
+            content: '';
+            background: url('imagenes/Alma&Sabor.png') no-repeat center center;
+            background-size: 100%;
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
+            opacity: 0.05; /* Logo de fondo más transparente */
             z-index: -1;
-            opacity: 0.1;
         }
 
         .teacher-card h3 {
@@ -130,6 +134,27 @@
         footer p {
             margin: 5px 0;
         }
+
+        /* Estilo responsivo */
+        @media (max-width: 768px) {
+            .gallery, .teachers {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            header img {
+                width: 200px; /* Reducir tamaño del logo en móviles */
+            }
+
+            .teacher-card {
+                width: 200px;
+                height: 200px;
+            }
+
+            .teacher-card img {
+                width: 70%;
+                height: 70%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -144,8 +169,12 @@
 
         <h2>Imágenes de las Instalaciones</h2>
         <div class="gallery">
-            <img src="data:image/jpeg;base64,..." alt="Instalación 1">
-            <img src="data:image/jpeg;base64,..." alt="Instalación 2">
+            <div class="gallery-item">
+                <img src="data:image/jpeg;base64,..." alt="Instalación 1">
+            </div>
+            <div class="gallery-item">
+                <img src="data:image/jpeg;base64,..." alt="Instalación 2">
+            </div>
         </div>
 
         <h2>Profesores Participantes</h2>
@@ -153,32 +182,12 @@
             <div class="teacher-card">
                 <img src="data:image/jpeg;base64,..." alt="Profesor 1">
                 <h3>Miguel Angel</h3>
-                <p>Taller de Salsa en linea</p>
+                <p>Taller de Salsa en línea</p>
             </div>
             <div class="teacher-card">
                 <img src="data:image/jpeg;base64,..." alt="Profesor 2">
                 <h3>Manolo Magañas</h3>
                 <p>Taller de Salsa Casino</p>
-            </div>
-            <div class="teacher-card">
-                <img src="data:image/jpeg;base64,..." alt="Profesor 3">
-                <h3>Jose Vidal</h3>
-                <p>Taller de Salsa en linea</p>
-            </div>
-            <div class="teacher-card">
-                <img src="data:image/jpeg;base64,..." alt="Profesor 5">
-                <h3>Nico y Eva</h3>
-                <p>Taller de Bachata</p>
-            </div>
-            <div class="teacher-card">
-                <img src="data:image/jpeg;base64,..." alt="Profesor 6">
-                <h3>Angie</h3>
-                <p>Taller de Estilo Femenino</p>
-            </div>
-            <div class="teacher-card">
-                <img src="data:image/jpeg;base64,..." alt="Profesor 7">
-                <h3>Isa CAmpoy & Andrés Fdez</h3>
-                <p>Organizadores</p>
             </div>
         </div>
     </div>
